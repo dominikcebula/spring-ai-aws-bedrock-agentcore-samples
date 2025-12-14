@@ -1,2 +1,17 @@
-# spring-ai-aws-bedrock-agentcore-samples
-Code samples for Spring AI usage with Amazon Bedrock AgentCore
+# 📦 Spring AI Amazon Bedrock AgentCore Code Samples
+
+## 📝 Overview
+
+This repository contains code samples for Spring AI usage with Amazon Bedrock AgentCore.
+
+## 💻 Code samples
+
+- [MCP Server using Spring AI on AWS AgentCore Runtime](mcp-server)
+
+## ✍ Author
+
+Dominik Cebula
+
+- https://dominikcebula.com/
+- https://blog.dominikcebula.com/
+- https://www.udemy.com/user/dominik-cebula/
