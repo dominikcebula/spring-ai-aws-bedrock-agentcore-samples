@@ -12,5 +12,6 @@
         <module>parent</module>
 
         <module>mcp-server</module>
+        <module>mcp-client</module>
     </modules>
 </project>

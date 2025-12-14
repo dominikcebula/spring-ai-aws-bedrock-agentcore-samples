@@ -1,0 +1,10 @@
+spring:
+  ai:
+    mcp:
+      client:
+        enabled: true
+        type: sync
+        streamable-http:
+          connections:
+            server1:
+              url: http://localhost:8000
