@@ -7,6 +7,7 @@ This repository contains code samples for Spring AI usage with Amazon Bedrock Ag
 ## 💻 Code samples
 
 - [MCP Server using Spring AI on AWS AgentCore Runtime](mcp-server)
+- [MCP Client using Spring AI](mcp-client)
 
 ## ✍ Author
 
