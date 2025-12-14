@@ -1,0 +1,7 @@
+spring:
+  ai:
+    mcp:
+      server:
+        protocol: STREAMABLE
+server:
+  port: 8000
