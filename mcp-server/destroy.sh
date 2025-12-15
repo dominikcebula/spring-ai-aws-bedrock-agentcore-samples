@@ -4,7 +4,9 @@
     exit 1
   }
 
-  terraform destroy || {
+  export TF_VAR_aws_region=`aws configure get region`
+
+  terraform destroy -auto-approve || {
     echo "Terraform destroy failed!"
     exit 1
   }

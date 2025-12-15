@@ -55,3 +55,15 @@ resource "aws_ecr_lifecycle_policy" "server_ecr" {
     ]
   })
 }
+
+resource "null_resource" "push_docker_agent_image" {
+  provisioner "local-exec" {
+    command = <<-EOT
+      ../docker-ecr-push.sh
+    EOT
+  }
+
+  depends_on = [
+    aws_ecr_repository.server_ecr
+  ]
+}

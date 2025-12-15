@@ -26,10 +26,26 @@ variable "image_tag" {
   default     = "latest"
 }
 
+variable "aws_region" {
+  description = "AWS region for deployment (REQUIRED)"
+  type        = string
+
+  validation {
+    condition = can(regex("^[a-z]{2}-[a-z]+-\\d{1}$", var.aws_region))
+    error_message = "Must be a valid AWS region (e.g., us-east-1, eu-west-1)"
+  }
+}
+
+variable "environment" {
+  description = "Environment name"
+  type        = string
+  default     = "dev"
+}
+
 variable "stack_name" {
   description = "Stack name for resource naming"
   type        = string
-  default     = "agentcore-mcp-server"
+  default = "agentcore-spring-ai"
 }
 
 variable "description" {

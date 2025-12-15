@@ -14,8 +14,15 @@
     exit 1
   }
 
+  export TF_VAR_aws_region=`aws configure get region`
+
   terraform init || {
     echo "Terraform initialization failed!"
+    exit 1
+  }
+
+  terraform validate || {
+    echo "Terraform validation failed!"
     exit 1
   }
 
