@@ -13,6 +13,13 @@ output "agent_runtime_version" {
   value       = aws_bedrockagentcore_agent_runtime.mcp_server.agent_runtime_version
 }
 
+output "agent_endpoint_url" {
+  description = "Endpoint URL of the created agent runtime"
+  value = format("https://bedrock-agentcore.%s.amazonaws.com/runtimes/%s/invocations?qualifier=DEFAULT", var.aws_region,
+    replace(replace(aws_bedrockagentcore_agent_runtime.mcp_server.agent_runtime_arn, ":", "%3A"), "/", "%2F")
+  )
+}
+
 output "ecr_repository_url" {
   description = "URL of the ECR repository"
   value       = aws_ecr_repository.server_ecr.repository_url
@@ -61,5 +68,5 @@ output "test_password" {
 
 output "get_token_command" {
   description = "Command to get authentication token"
-  value       = "python get_token.py ${aws_cognito_user_pool_client.mcp_client.id} testuser MyPassword123! ${data.aws_region.current.id}"
+  value = "python tools/get_token.py ${aws_cognito_user_pool_client.mcp_client.id} testuser MyPassword123! ${data.aws_region.current.id}"
 }
